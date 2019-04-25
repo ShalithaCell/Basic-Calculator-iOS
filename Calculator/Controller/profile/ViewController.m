@@ -18,21 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //initialize
     self.lblExpression.text = @"";
-    
     self.lblResult.text = @"= ";
     
-    /*NSString *numericExpression = @"(5 + 5) * 2 / 2";
-    NSExpression *expression = [NSExpression expressionWithFormat:numericExpression];
-    NSNumber *result = [expression expressionValueWithObject:nil context:nil];
     
-    NSLog(@"%@", [NSString stringWithFormat:@"%@", result]);*/
 }
 
 
-
+// all action buttons pressed
 - (IBAction)btnAction:(UIButton *)sender {
     
+    //check if Expression is exists
     if(self.lblExpression.text.length == 0){
         return;
     }
@@ -40,8 +37,10 @@
     NSString *mul = @"x";
     NSString *div = @"/";
     
+    //check action is multiply or divition
     if([sender.titleLabel.text isEqualToString:mul] || [sender.titleLabel.text  isEqualToString:div]){
         
+        //add parenthesis
         NSString *expression = [NSString stringWithFormat:@"(%@)%@",self.lblExpression.text,sender.titleLabel.text];
         
         self.lblExpression.text = expression;
@@ -53,10 +52,12 @@
         self.lblExpression.text = expression;
     }
     
+    //initialize result
     self.lblResult.text = @"= ";
     
 }
 
+//Eqal button pressed
 - (IBAction)btnEqal:(UIButton *)sender {
     
     //check if expression is exists
@@ -65,8 +66,10 @@
     }
     
     @try {
+        //add one decimal point to last number to get result as recimal points
         NSString *numericExpression = [NSString stringWithFormat:@"%@.0", self.lblExpression.text];
         
+        //replace '*' instead of 'x'
         numericExpression = [numericExpression stringByReplacingOccurrencesOfString:@"x"
                                        withString:@"*"];
         
@@ -92,22 +95,30 @@
 
 - (IBAction)btnClear:(UIButton *)sender {
     
+    //check if expression is exists
     if(self.lblExpression.text.length == 0){
         return;
     }
     
     NSString *numericExpression = self.lblExpression.text;
     
+    //get last character
     NSString *lastChar = [numericExpression substringFromIndex:[numericExpression length] - 1];
     
+    //check the char is '0)'
     if([lastChar isEqualToString:@")"]){
+        
+        //then delete '(' and ')'
         numericExpression = [numericExpression substringToIndex:[numericExpression length]-1];
         
         numericExpression = [numericExpression substringToIndex:0];
+        
     }else{
+        //remove last character
         numericExpression = [numericExpression substringToIndex:[numericExpression length]-1];
     }
     
+    //update
     self.lblExpression.text = numericExpression;
     self.lblResult.text = @"= ";
 }

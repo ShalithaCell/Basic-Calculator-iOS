@@ -13,7 +13,6 @@
 		6A66F204225ECF340034D345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A66F203225ECF340034D345 /* Assets.xcassets */; };
 		6A66F207225ECF340034D345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66F205225ECF340034D345 /* LaunchScreen.storyboard */; };
 		6A66F20A225ECF340034D345 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66F209225ECF340034D345 /* main.m */; };
-		6AE9BAA02271CF7C00773821 /* clsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9BA9F2271CF7C00773821 /* clsLogic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +26,6 @@
 		6A66F206225ECF340034D345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A66F208225ECF340034D345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A66F209225ECF340034D345 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6AE9BA9E2271CF7C00773821 /* clsLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clsLogic.h; sourceTree = "<group>"; };
-		6AE9BA9F2271CF7C00773821 /* clsLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clsLogic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +68,6 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		6AE9BA9D2271CDA400773821 /* biz */ = {
-			isa = PBXGroup;
-			children = (
-				6AE9BA9E2271CF7C00773821 /* clsLogic.h */,
-				6AE9BA9F2271CF7C00773821 /* clsLogic.m */,
-			);
-			path = biz;
-			sourceTree = "<group>";
-		};
 		6AE9BAA12271CF8D00773821 /* profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				6AE9BAA12271CF8D00773821 /* profile */,
-				6AE9BA9D2271CDA400773821 /* biz */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A66F1FF225ECF320034D345 /* ViewController.m in Sources */,
-				6AE9BAA02271CF7C00773821 /* clsLogic.m in Sources */,
 				6A66F20A225ECF340034D345 /* main.m in Sources */,
 				6A66F1FC225ECF320034D345 /* AppDelegate.m in Sources */,
 			);
