@@ -58,17 +58,41 @@
 		6A66F1F9225ECF320034D345 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				6A66F1FA225ECF320034D345 /* AppDelegate.h */,
-				6A66F1FB225ECF320034D345 /* AppDelegate.m */,
-				6A66F1FD225ECF320034D345 /* ViewController.h */,
-				6A66F1FE225ECF320034D345 /* ViewController.m */,
-				6A66F200225ECF320034D345 /* Main.storyboard */,
+				6AFB8BD32271C231004346F9 /* Controller */,
+				6AFB8BD22271C212004346F9 /* View */,
+				6AFB8BD12271C203004346F9 /* Model */,
 				6A66F203225ECF340034D345 /* Assets.xcassets */,
-				6A66F205225ECF340034D345 /* LaunchScreen.storyboard */,
 				6A66F208225ECF340034D345 /* Info.plist */,
 				6A66F209225ECF340034D345 /* main.m */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		6AFB8BD12271C203004346F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AFB8BD22271C212004346F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A66F200225ECF320034D345 /* Main.storyboard */,
+				6A66F205225ECF340034D345 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6AFB8BD32271C231004346F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6A66F1FA225ECF320034D345 /* AppDelegate.h */,
+				6A66F1FB225ECF320034D345 /* AppDelegate.m */,
+				6A66F1FD225ECF320034D345 /* ViewController.h */,
+				6A66F1FE225ECF320034D345 /* ViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +310,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9F7NXB3HH;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +328,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9F7NXB3HH;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
