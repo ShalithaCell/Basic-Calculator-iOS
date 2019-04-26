@@ -109,9 +109,13 @@
     if([lastChar isEqualToString:@")"]){
         
         //then delete '(' and ')'
-        numericExpression = [numericExpression substringToIndex:[numericExpression length]-1];
         
-        numericExpression = [numericExpression substringToIndex:0];
+        NSString *Prefix = @"(";
+        NSString *Suffix = @")";
+        NSRange needleRange = NSMakeRange(Prefix.length,
+                                          numericExpression.length - Prefix.length - Suffix.length);
+        numericExpression = [numericExpression substringWithRange:needleRange];
+        
         
     }else{
         //remove last character
@@ -129,6 +133,18 @@
 }
 
 - (IBAction)btnNumberClick:(UIButton *)sender {
+    
+    if(self.lblExpression.text.length != 0){
+        NSString *lastChar = [self.lblExpression.text substringFromIndex:[self.lblExpression.text length] - 1];
+        
+        if([lastChar isEqualToString:@"."] && [sender.titleLabel.text isEqualToString:@"."]){
+            return;
+        }
+    }
+    
+    //check if enterd double dot
+    
+    
     
     NSString *expression = [NSString stringWithFormat:@"%@%@",self.lblExpression.text,sender.titleLabel.text];
     
