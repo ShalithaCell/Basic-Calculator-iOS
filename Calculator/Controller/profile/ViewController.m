@@ -66,8 +66,14 @@
     }
     
     @try {
-        //add one decimal point to last number to get result as recimal points
-        NSString *numericExpression = [NSString stringWithFormat:@"%@.0", self.lblExpression.text];
+        NSString *rawInputString = [NSString stringWithFormat:@"%@", self.lblExpression.text];
+        NSString *numericExpression = @"";
+        if ([rawInputString containsString:@"."])  {
+            numericExpression = rawInputString;
+        } else {
+            //add one decimal point to last number to get result as recimal points
+            numericExpression = [NSString stringWithFormat:@"%@.0", self.lblExpression.text];
+        }
         
         //replace '*' instead of 'x'
         numericExpression = [numericExpression stringByReplacingOccurrencesOfString:@"x"
