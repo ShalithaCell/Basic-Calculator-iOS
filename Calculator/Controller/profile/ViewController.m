@@ -24,7 +24,7 @@
     
     //initialize
     self.lblExpression.text = @"";
-    self.lblResult.text = @"= ";
+    self.lblResult.text = @" ";
     
     
 }
@@ -46,7 +46,7 @@
     self.lblExpression.text = expression;
     
     //initialize result
-    self.lblResult.text = @"= ";
+    self.lblResult.text = @" ";
     
 }
 
@@ -79,7 +79,7 @@
         
         NSLog(@"%@", [NSString stringWithFormat:@"%@", result]);
         
-        self.lblResult.text = [NSString stringWithFormat:@"= %@", result];
+        self.lblResult.text = [NSString stringWithFormat:@" %@", result];
     } @catch (NSException *exception) {
         NSLog(@"%@", exception.reason);
         
@@ -123,11 +123,11 @@
     
     //update
     self.lblExpression.text = numericExpression;
-    self.lblResult.text = @"= ";
+    self.lblResult.text = @" ";
 }
 
 - (IBAction)btnReset:(UIButton *)sender {
-    self.lblResult.text = @"= ";
+    self.lblResult.text = @" ";
     self.lblExpression.text = @"";
 }
 
@@ -153,9 +153,9 @@
 }
 
 -(void) displayAlert{
-    NSString *title = @"Alert";
-    NSString *message = @"Incorrect Expression";
-    NSString *okButtonText = @"ok";
+    NSString *title = @"出错了";
+    NSString *message = @"不正确的算式";
+    NSString *okButtonText = @"好的";
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
