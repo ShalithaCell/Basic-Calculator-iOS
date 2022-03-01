@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
+#import "DDMathEvaluator.h"
+#import "DDExpression.h"
+
+
 @interface ViewController ()
 
 @end
@@ -33,24 +37,13 @@
     if(self.lblExpression.text.length == 0){
         return;
     }
-    
-    NSString *mul = @"x";
-    NSString *div = @"/";
+
     
     //check action is multiply or divition
-    if([sender.titleLabel.text isEqualToString:mul] || [sender.titleLabel.text  isEqualToString:div]){
+    
+    NSString *expression = [NSString stringWithFormat:@"%@%@",self.lblExpression.text,sender.titleLabel.text];
         
-        //add parenthesis
-        NSString *expression = [NSString stringWithFormat:@"(%@)%@",self.lblExpression.text,sender.titleLabel.text];
-        
-        self.lblExpression.text = expression;
-        
-    }
-    else{
-        NSString *expression = [NSString stringWithFormat:@"%@%@",self.lblExpression.text,sender.titleLabel.text];
-        
-        self.lblExpression.text = expression;
-    }
+    self.lblExpression.text = expression;
     
     //initialize result
     self.lblResult.text = @"= ";
